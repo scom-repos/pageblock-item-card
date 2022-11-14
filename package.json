@@ -1,0 +1,14 @@
+{
+  "name": "@scom/pageblock-commerce-nft",
+  "version": "0.1.0",
+  "dependencies": {
+      "@ijstech/components": "0.1.24",
+      "@ijstech/eth-wallet": "0.1.16"
+  },
+  "devDependencies": {
+    "esbuild": "^0.13.4"
+  },
+  "scripts": {
+      "build": "rm -rf dist && node esbuild.js && cp -f scconfig.json dist"
+  }
+}
