@@ -104,7 +104,8 @@
       const _data = {
         title: this.edtTitle.value || "",
         description: this.edtDesc.value || "",
-        contractEntrypoint: this.edtContract.value || ""
+        contractEntrypoint: this.edtContract.value || "",
+        viewAllUrl: this.edtViewAllUrl.value || ""
       };
       if (selectedItem)
         _data.type = selectedItem.value;
@@ -162,6 +163,11 @@
         caption: "Contract Entrypoint:"
       }), /* @__PURE__ */ this.$render("i-input", {
         id: "edtContract",
+        width: "100%"
+      }), /* @__PURE__ */ this.$render("i-label", {
+        caption: "View all link:"
+      }), /* @__PURE__ */ this.$render("i-input", {
+        id: "edtViewAllUrl",
         width: "100%"
       }));
     }
@@ -494,7 +500,8 @@
           verticalAlignment: "center"
         }, /* @__PURE__ */ this.$render("i-label", {
           caption: "View All",
-          font: { size: "0.875rem", color: Theme2.colors.primary.main, weight: 600 }
+          font: { size: "0.875rem", color: Theme2.colors.primary.main, weight: 600 },
+          link: { href: this._data.viewAllUrl, target: "_self" }
         })));
       }
     }

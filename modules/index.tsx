@@ -237,7 +237,11 @@ export default class Module1 extends Module implements PageBlock {
           horizontalAlignment='center'
           verticalAlignment='center'
         >
-          <i-label caption="View All" font={{ size: '0.875rem', color: Theme.colors.primary.main, weight: 600 }}></i-label>
+          <i-label
+            caption="View All"
+            font={{ size: '0.875rem', color: Theme.colors.primary.main, weight: 600 }}
+            link={{ href: this._data.viewAllUrl, target: "_self" }}
+          ></i-label>
         </i-hstack>
       )
     }

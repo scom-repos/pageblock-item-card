@@ -15,6 +15,7 @@ interface IConfig {
   type?: cardType;
   itemsToShow?: number;
   contractEntrypoint?: string;
+  viewAllUrl?: string;
 }
 
 const getCardTypeOption = (): ICardTypeOption[] => {

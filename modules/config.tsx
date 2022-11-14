@@ -25,6 +25,7 @@ export default class Config extends Module {
   private edtDesc: Input;
   private edtItemsToShow: Input;
   private edtContract: Input;
+  private edtViewAllUrl: Input;
   private cbCardType: ComboBox;
   private _items: ICardTypeOption[];
 
@@ -34,6 +35,7 @@ export default class Config extends Module {
       title: this.edtTitle.value || "",
       description: this.edtDesc.value || "",
       contractEntrypoint: this.edtContract.value || "",
+      viewAllUrl: this.edtViewAllUrl.value || ""
     };
     if (selectedItem) _data.type = selectedItem.value;
     const itemsToShow = Number(this.edtItemsToShow.value);
@@ -80,6 +82,8 @@ export default class Config extends Module {
         <i-input id="edtItemsToShow" width="100%" inputType='number'></i-input>
         <i-label caption="Contract Entrypoint:"></i-label>
         <i-input id="edtContract" width="100%"></i-input>
+        <i-label caption="View all link:"></i-label>
+        <i-input id="edtViewAllUrl" width="100%"></i-input>
       </i-vstack>
     )
   }
