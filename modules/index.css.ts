@@ -50,7 +50,8 @@ export const carouselStyle = Styles.style({
     '.dots-pagination': {
       height: 45,
       background: Theme.background.paper,
-      borderTop: '1px solid rgba(217,225,232,.38)'
+      borderTop: '1px solid rgba(217,225,232,.38)',
+      marginTop: 0,
     },
     '.dots-pagination .--dot > span': {
       minHeight: '0.6rem',
