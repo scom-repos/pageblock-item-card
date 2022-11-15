@@ -50,6 +50,8 @@ export default class Config extends Module {
     this.cbCardType.clear();
     const type = this._items.find(type => type.value === config.type);
     if (type) this.cbCardType.selectedItem = type;
+    this.edtItemsToShow.value = config.itemsToShow || "";
+    this.edtViewAllUrl.value = config.viewAllUrl || "";
   }
 
   init() {
