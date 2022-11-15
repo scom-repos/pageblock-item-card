@@ -122,6 +122,8 @@
       const type = this._items.find((type2) => type2.value === config.type);
       if (type)
         this.cbCardType.selectedItem = type;
+      this.edtItemsToShow.value = config.itemsToShow || "";
+      this.edtViewAllUrl.value = config.viewAllUrl || "";
     }
     init() {
       this._items = getCardTypeOption();
@@ -181,7 +183,12 @@
   var import_components3 = __toModule(__require("@ijstech/components"));
   var Theme = import_components3.Styles.Theme.ThemeVars;
   var cardStyle = import_components3.Styles.style({
-    boxShadow: "rgb(0 0 0 / 8%) 0px 4px 12px"
+    boxShadow: "rgb(0 0 0 / 8%) 0px 4px 12px",
+    $nest: {
+      "i-link > a": {
+        textDecoration: "none"
+      }
+    }
   });
   var cardItemStyle = import_components3.Styles.style({
     cursor: "pointer",
