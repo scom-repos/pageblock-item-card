@@ -2,7 +2,12 @@ import { Styles } from "@ijstech/components";
 const Theme = Styles.Theme.ThemeVars;
 
 export const cardStyle = Styles.style({
-  boxShadow: 'rgb(0 0 0 / 8%) 0px 4px 12px'
+  boxShadow: 'rgb(0 0 0 / 8%) 0px 4px 12px',
+  $nest: {
+    'i-link > a': {
+      textDecoration: 'none'
+    }
+  }
 })
 
 export const cardItemStyle = Styles.style({
