@@ -1,5 +1,5 @@
 {
-  "name": "@scom/pageblock-commerce-nft",
+  "name": "@scom/pageblock-item-card",
   "version": "0.1.0",
   "dependencies": {
       "@ijstech/components": "0.1.24",
