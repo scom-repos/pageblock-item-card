@@ -2,7 +2,7 @@
   "name": "@scom/pageblock-item-card",
   "version": "0.1.0",
   "dependencies": {
-      "@ijstech/components": "0.1.24",
+      "@ijstech/components": "0.1.28",
       "@ijstech/eth-wallet": "0.1.16"
   },
   "devDependencies": {
