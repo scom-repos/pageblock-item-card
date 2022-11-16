@@ -520,7 +520,8 @@
         class: carouselStyle,
         width: "100%",
         minHeight: "200px",
-        slidesToShow: 1
+        slidesToShow: 1,
+        swipe: true
       });
       const items = products.map((product) => {
         const item = /* @__PURE__ */ this.$render("i-grid-layout", {

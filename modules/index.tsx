@@ -1,13 +1,9 @@
 import {
   Module,
   customModule,
-  Image,
-  GridLayout,
   Styles,
-  Markdown,
   Panel,
   Label,
-  CardLayout,
   HStack,
   CarouselSlider
 } from '@ijstech/components';
@@ -251,7 +247,7 @@ export default class Module1 extends Module implements PageBlock {
     this.pnlCardBody.clearInnerHTML();
     this.pnlCardFooter.clearInnerHTML();
     const carousel = (
-      <i-carousel-slider class={carouselStyle} width="100%" minHeight='200px' slidesToShow={1}></i-carousel-slider>
+      <i-carousel-slider class={carouselStyle} width="100%" minHeight='200px' slidesToShow={1} swipe={true}></i-carousel-slider>
     )
     const items = products.map(product => {
       const item = (
