@@ -219,7 +219,6 @@ define("@itemCard/main", ["require", "exports", "@ijstech/components", "@itemCar
             return this._data;
         }
         async setData(data) {
-            console.log('))');
             this._data = data;
             this.cardConfig.data = data;
             this.onUpdateBlock();
