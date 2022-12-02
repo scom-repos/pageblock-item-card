@@ -1,3 +1,19 @@
 {
-  "main": "{root}/index.js"
+  "name": "@itemCard/main",
+  "version": "0.1.0",
+  "env": "",
+  "moduleDir": "modules",
+  "main": "@itemCard/main",
+  "modules": {
+    "@itemCard/main": {
+      "path": "main"
+    },
+    "@itemCard/global": {
+      "path": "global"
+    }
+  },
+  "dependencies": {
+    "@ijstech/eth-contract": "*",
+    "@ijstech/eth-wallet": "*"
+  }
 }
