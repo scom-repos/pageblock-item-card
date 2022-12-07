@@ -10,6 +10,9 @@
     },
     "@itemCard/global": {
       "path": "global"
+    },
+    "@itemCard/config": {
+      "path": "config"
     }
   },
   "dependencies": {
