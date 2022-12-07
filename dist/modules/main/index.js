@@ -4,81 +4,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-define("@itemCard/main/config.css.ts", ["require", "exports", "@ijstech/components"], function (require, exports, components_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.textareaStyle = void 0;
-    exports.textareaStyle = components_1.Styles.style({
-        $nest: {
-            'textarea': {
-                border: 'none',
-                outline: 'none'
-            }
-        }
-    });
-});
-define("@itemCard/main/config.tsx", ["require", "exports", "@ijstech/components", "@itemCard/main/config.css.ts", "@itemCard/global"], function (require, exports, components_2, config_css_1, global_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    let Config = class Config extends components_2.Module {
-        get data() {
-            const selectedItem = this.cbCardType.selectedItem;
-            const _data = {
-                title: this.edtTitle.value || "",
-                description: this.edtDesc.value || "",
-                contractEntrypoint: this.edtContract.value || "",
-                viewAllUrl: this.edtViewAllUrl.value || ""
-            };
-            if (selectedItem)
-                _data.type = selectedItem.value;
-            const itemsToShow = Number(this.edtItemsToShow.value);
-            if (Number.isInteger(itemsToShow))
-                _data.itemsToShow = itemsToShow;
-            return _data;
-        }
-        set data(config) {
-            this.edtTitle.value = config.title || "";
-            this.edtDesc.value = config.description || "";
-            this.edtContract.value = config.contractEntrypoint || "";
-            this.cbCardType.clear();
-            const type = this._items.find(type => type.value === config.type);
-            if (type)
-                this.cbCardType.selectedItem = type;
-            this.edtItemsToShow.value = config.itemsToShow || "";
-            this.edtViewAllUrl.value = config.viewAllUrl || "";
-        }
-        init() {
-            this._items = global_1.getCardTypeOption();
-            super.init();
-        }
-        render() {
-            return (this.$render("i-vstack", { id: "pnlConfig", gap: '0.5rem', padding: { top: '1rem', bottom: '1rem', left: '1rem', right: '1rem' } },
-                this.$render("i-label", { caption: "Title:" }),
-                this.$render("i-input", { id: "edtTitle", width: "100%" }),
-                this.$render("i-label", { caption: "Description:" }),
-                this.$render("i-input", { id: "edtDesc", class: config_css_1.textareaStyle, width: "100%", height: "auto", resize: "auto-grow", inputType: 'textarea' }),
-                this.$render("i-label", { caption: "Card Type:" }),
-                this.$render("i-combo-box", { id: "cbCardType", width: "100%", icon: { name: 'angle-down' }, items: this._items }),
-                this.$render("i-label", { caption: "Max items to show:" }),
-                this.$render("i-input", { id: "edtItemsToShow", width: "100%", inputType: 'number' }),
-                this.$render("i-label", { caption: "Contract Entrypoint:" }),
-                this.$render("i-input", { id: "edtContract", width: "100%" }),
-                this.$render("i-label", { caption: "View all link:" }),
-                this.$render("i-input", { id: "edtViewAllUrl", width: "100%" })));
-        }
-    };
-    Config = __decorate([
-        components_2.customModule,
-        components_2.customElements("pageblock-card-config")
-    ], Config);
-    exports.default = Config;
-});
-define("@itemCard/main/index.css.ts", ["require", "exports", "@ijstech/components"], function (require, exports, components_3) {
+define("@itemCard/main/index.css.ts", ["require", "exports", "@ijstech/components"], function (require, exports, components_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.controlStyle = exports.carouselStyle = exports.actionButtonStyle = exports.imageStyle = exports.cardItemStyle = exports.cardStyle = void 0;
-    const Theme = components_3.Styles.Theme.ThemeVars;
-    exports.cardStyle = components_3.Styles.style({
+    const Theme = components_1.Styles.Theme.ThemeVars;
+    exports.cardStyle = components_1.Styles.style({
         boxShadow: 'rgb(0 0 0 / 8%) 0px 4px 12px',
         $nest: {
             'i-link > a': {
@@ -86,7 +17,7 @@ define("@itemCard/main/index.css.ts", ["require", "exports", "@ijstech/component
             }
         }
     });
-    exports.cardItemStyle = components_3.Styles.style({
+    exports.cardItemStyle = components_1.Styles.style({
         cursor: 'pointer',
         $nest: {
             '&:hover i-button': {
@@ -98,7 +29,7 @@ define("@itemCard/main/index.css.ts", ["require", "exports", "@ijstech/component
             }
         }
     });
-    exports.imageStyle = components_3.Styles.style({
+    exports.imageStyle = components_1.Styles.style({
         $nest: {
             '> img': {
                 width: '100%',
@@ -106,7 +37,7 @@ define("@itemCard/main/index.css.ts", ["require", "exports", "@ijstech/component
             }
         }
     });
-    exports.actionButtonStyle = components_3.Styles.style({
+    exports.actionButtonStyle = components_1.Styles.style({
         boxShadow: 'none',
         $nest: {
             '&:hover': {
@@ -118,7 +49,7 @@ define("@itemCard/main/index.css.ts", ["require", "exports", "@ijstech/component
             }
         }
     });
-    exports.carouselStyle = components_3.Styles.style({
+    exports.carouselStyle = components_1.Styles.style({
         $nest: {
             '.dots-pagination': {
                 height: 45,
@@ -132,7 +63,7 @@ define("@itemCard/main/index.css.ts", ["require", "exports", "@ijstech/component
             }
         }
     });
-    exports.controlStyle = components_3.Styles.style({
+    exports.controlStyle = components_1.Styles.style({
         $nest: {
             'i-button': {
                 boxShadow: 'none',
@@ -203,13 +134,13 @@ define("@itemCard/main/data.json.ts", ["require", "exports"], function (require,
     ];
     exports.default = productList;
 });
-define("@itemCard/main", ["require", "exports", "@ijstech/components", "@itemCard/global", "@itemCard/main/config.tsx", "@itemCard/main/index.css.ts", "@itemCard/main/data.json.ts"], function (require, exports, components_4, global_2, config_1, index_css_1, data_json_1) {
+define("@itemCard/main", ["require", "exports", "@ijstech/components", "@itemCard/global", "@itemCard/config", "@itemCard/main/index.css.ts", "@itemCard/main/data.json.ts"], function (require, exports, components_2, global_1, config_1, index_css_1, data_json_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Config = void 0;
     exports.Config = config_1.default;
-    const Theme = components_4.Styles.Theme.ThemeVars;
-    let Module1 = class Module1 extends components_4.Module {
+    const Theme = components_2.Styles.Theme.ThemeVars;
+    let Module1 = class Module1 extends components_2.Module {
         constructor() {
             super(...arguments);
             this._data = {};
@@ -284,10 +215,10 @@ define("@itemCard/main", ["require", "exports", "@ijstech/components", "@itemCar
                         this.$render("i-hstack", { gap: "0.5rem" },
                             this.$render("i-vstack", { gap: "0.25rem" },
                                 this.$render("i-label", { caption: "Price", font: { size: '0.75rem', color: Theme.colors.secondary.main, weight: 600 } }),
-                                this.$render("i-label", { caption: `${global_2.formatNumber(product.price)} ${product.token}`, font: { size: '0.75rem', weight: 600 } })),
+                                this.$render("i-label", { caption: `${global_1.formatNumber(product.price)} ${product.token}`, font: { size: '0.75rem', weight: 600 } })),
                             this.$render("i-vstack", { gap: "0.25rem" },
                                 this.$render("i-label", { caption: "Remaining", font: { size: '0.75rem', color: Theme.colors.secondary.main, weight: 600 } }),
-                                this.$render("i-label", { caption: global_2.formatNumber(product.quantity), font: { size: '0.75rem', weight: 600 } })))),
+                                this.$render("i-label", { caption: global_1.formatNumber(product.quantity), font: { size: '0.75rem', weight: 600 } })))),
                     this.$render("i-vstack", { width: "100%", verticalAlignment: "center" },
                         this.$render("i-button", { class: index_css_1.actionButtonStyle, width: "auto", height: 45, caption: "Add to Cart", icon: { width: 18, height: 18, name: 'cart-plus' }, background: { color: 'transparent' }, border: { width: "1px 0 0", style: 'solid', color: 'rgba(217,225,232,.38)', radius: "0 0 5px 5px" }, font: { size: '0.875rem', weight: 600 } }))));
             });
@@ -304,10 +235,10 @@ define("@itemCard/main", ["require", "exports", "@ijstech/components", "@itemCar
                         this.$render("i-hstack", { gap: "0.5rem" },
                             this.$render("i-vstack", { gap: "0.25rem" },
                                 this.$render("i-label", { caption: "Price", font: { size: '0.75rem', color: Theme.colors.secondary.main, weight: 600 } }),
-                                this.$render("i-label", { caption: `${global_2.formatNumber(product.price)} ${product.token}`, font: { size: '0.75rem', weight: 600 } })),
+                                this.$render("i-label", { caption: `${global_1.formatNumber(product.price)} ${product.token}`, font: { size: '0.75rem', weight: 600 } })),
                             this.$render("i-vstack", { gap: "0.25rem" },
                                 this.$render("i-label", { caption: "Remaining", font: { size: '0.75rem', color: Theme.colors.secondary.main, weight: 600 } }),
-                                this.$render("i-label", { caption: global_2.formatNumber(product.quantity), font: { size: '0.75rem', weight: 600 } })))),
+                                this.$render("i-label", { caption: global_1.formatNumber(product.quantity), font: { size: '0.75rem', weight: 600 } })))),
                     this.$render("i-vstack", { width: "100%", verticalAlignment: "center" },
                         this.$render("i-button", { class: index_css_1.actionButtonStyle, width: "auto", height: 45, icon: { width: 18, height: 18, name: 'cart-plus' }, background: { color: 'transparent' }, border: { width: 1, style: 'solid', color: 'rgba(217,225,232,.38)' } }))));
             });
@@ -334,10 +265,10 @@ define("@itemCard/main", ["require", "exports", "@ijstech/components", "@itemCar
                         this.$render("i-hstack", { gap: "0.5rem" },
                             this.$render("i-vstack", { gap: "0.25rem" },
                                 this.$render("i-label", { caption: "Price", font: { size: '0.75rem', color: Theme.colors.secondary.main, weight: 600 } }),
-                                this.$render("i-label", { caption: `${global_2.formatNumber(product.price)} ${product.token}`, font: { size: '0.75rem', weight: 600 } })),
+                                this.$render("i-label", { caption: `${global_1.formatNumber(product.price)} ${product.token}`, font: { size: '0.75rem', weight: 600 } })),
                             this.$render("i-vstack", { gap: "0.25rem" },
                                 this.$render("i-label", { caption: "Remaining", font: { size: '0.75rem', color: Theme.colors.secondary.main, weight: 600 } }),
-                                this.$render("i-label", { caption: global_2.formatNumber(product.quantity), font: { size: '0.75rem', weight: 600 } })))),
+                                this.$render("i-label", { caption: global_1.formatNumber(product.quantity), font: { size: '0.75rem', weight: 600 } })))),
                     this.$render("i-vstack", { width: "100%", verticalAlignment: "center" },
                         this.$render("i-button", { class: index_css_1.actionButtonStyle, width: "auto", height: 45, icon: { width: 18, height: 18, name: 'cart-plus' }, background: { color: 'transparent' }, border: { width: 1, style: 'solid', color: 'rgba(217,225,232,.38)' } }))));
                 return {
@@ -368,7 +299,7 @@ define("@itemCard/main", ["require", "exports", "@ijstech/components", "@itemCar
         }
     };
     Module1 = __decorate([
-        components_4.customModule
+        components_2.customModule
     ], Module1);
     exports.default = Module1;
 });

@@ -8,7 +8,7 @@ import {
   CarouselSlider
 } from '@ijstech/components';
 import { PageBlock, formatNumber, IConfig } from '@itemCard/global';
-import Config from './config';
+import Config from '@itemCard/config';
 import { actionButtonStyle, cardItemStyle, cardStyle, carouselStyle, controlStyle, imageStyle } from './index.css';
 import productList from './data.json';
 export { Config };

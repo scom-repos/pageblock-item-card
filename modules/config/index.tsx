@@ -3,7 +3,6 @@ import {
   customModule,
   customElements,
   ControlElement,
-  Styles,
   Input,
   ComboBox
 } from '@ijstech/components';
