@@ -337,25 +337,23 @@ export default class Module1 extends Module implements PageBlock {
   render() {
     return (
       <i-panel id="pnlBlock" class={cardStyle}>
-        <i-panel class="container">
-          <i-panel id="pnlCard">
-            <i-hstack
-              id="pnlCardHeader"
-              verticalAlignment='center'
-              horizontalAlignment='space-between'
-              padding={{ top: '1.5rem', bottom: '1.5rem', left: '1.5rem', right: '1.5rem' }}
-            >
-              <i-vstack gap="0.5rem">
-                <i-label id="lblTitle" font={{ size: '1.1rem', weight: 600 }}></i-label>
-                <i-label id="lblDesc" font={{ size: '0.875rem', color: Theme.colors.secondary.main }}></i-label>
-              </i-vstack>
-              <i-hstack id="pnlControls" class={controlStyle} gap="0.5rem"></i-hstack>
-            </i-hstack>
-            <i-panel id="pnlCardBody"></i-panel>
-            <i-panel id="pnlCardFooter"></i-panel>
-          </i-panel>
-          <pageblock-card-config id="cardConfig" visible={false}></pageblock-card-config>
+        <i-panel id="pnlCard" class="container">
+          <i-hstack
+            id="pnlCardHeader"
+            verticalAlignment='center'
+            horizontalAlignment='space-between'
+            padding={{ top: '1.5rem', bottom: '1.5rem', left: '1.5rem', right: '1.5rem' }}
+          >
+            <i-vstack gap="0.5rem">
+              <i-label id="lblTitle" font={{ size: '1.1rem', weight: 600 }}></i-label>
+              <i-label id="lblDesc" font={{ size: '0.875rem', color: Theme.colors.secondary.main }}></i-label>
+            </i-vstack>
+            <i-hstack id="pnlControls" class={controlStyle} gap="0.5rem"></i-hstack>
+          </i-hstack>
+          <i-panel id="pnlCardBody"></i-panel>
+          <i-panel id="pnlCardFooter"></i-panel>
         </i-panel>
+        <pageblock-card-config id="cardConfig" visible={false}></pageblock-card-config>
       </i-panel>
     )
   }
