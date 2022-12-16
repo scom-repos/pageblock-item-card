@@ -6,6 +6,13 @@ export const cardStyle = Styles.style({
   $nest: {
     'i-link > a': {
       textDecoration: 'none'
+    },
+    'i-panel.container': {
+      width: Theme.layout.container.width,
+      maxWidth: Theme.layout.container.maxWidth,
+      overflow: Theme.layout.container.overflow,
+      textAlign: (Theme.layout.container.textAlign as any),
+      margin: '0 auto'
     }
   }
 })

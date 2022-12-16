@@ -14,6 +14,13 @@ define("@itemCard/main/index.css.ts", ["require", "exports", "@ijstech/component
         $nest: {
             'i-link > a': {
                 textDecoration: 'none'
+            },
+            'i-panel.container': {
+                width: Theme.layout.container.width,
+                maxWidth: Theme.layout.container.maxWidth,
+                overflow: Theme.layout.container.overflow,
+                textAlign: Theme.layout.container.textAlign,
+                margin: '0 auto'
             }
         }
     });
@@ -287,15 +294,16 @@ define("@itemCard/main", ["require", "exports", "@ijstech/components", "@itemCar
         }
         render() {
             return (this.$render("i-panel", { id: "pnlBlock", class: index_css_1.cardStyle },
-                this.$render("i-panel", { id: "pnlCard" },
-                    this.$render("i-hstack", { id: "pnlCardHeader", verticalAlignment: 'center', horizontalAlignment: 'space-between', padding: { top: '1.5rem', bottom: '1.5rem', left: '1.5rem', right: '1.5rem' } },
-                        this.$render("i-vstack", { gap: "0.5rem" },
-                            this.$render("i-label", { id: "lblTitle", font: { size: '1.1rem', weight: 600 } }),
-                            this.$render("i-label", { id: "lblDesc", font: { size: '0.875rem', color: Theme.colors.secondary.main } })),
-                        this.$render("i-hstack", { id: "pnlControls", class: index_css_1.controlStyle, gap: "0.5rem" })),
-                    this.$render("i-panel", { id: "pnlCardBody" }),
-                    this.$render("i-panel", { id: "pnlCardFooter" })),
-                this.$render("pageblock-card-config", { id: "cardConfig", visible: false })));
+                this.$render("i-panel", { class: "container" },
+                    this.$render("i-panel", { id: "pnlCard" },
+                        this.$render("i-hstack", { id: "pnlCardHeader", verticalAlignment: 'center', horizontalAlignment: 'space-between', padding: { top: '1.5rem', bottom: '1.5rem', left: '1.5rem', right: '1.5rem' } },
+                            this.$render("i-vstack", { gap: "0.5rem" },
+                                this.$render("i-label", { id: "lblTitle", font: { size: '1.1rem', weight: 600 } }),
+                                this.$render("i-label", { id: "lblDesc", font: { size: '0.875rem', color: Theme.colors.secondary.main } })),
+                            this.$render("i-hstack", { id: "pnlControls", class: index_css_1.controlStyle, gap: "0.5rem" })),
+                        this.$render("i-panel", { id: "pnlCardBody" }),
+                        this.$render("i-panel", { id: "pnlCardFooter" })),
+                    this.$render("pageblock-card-config", { id: "cardConfig", visible: false }))));
         }
     };
     Module1 = __decorate([
