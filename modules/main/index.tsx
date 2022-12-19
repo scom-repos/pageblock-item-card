@@ -337,7 +337,7 @@ export default class Module1 extends Module implements PageBlock {
   render() {
     return (
       <i-panel id="pnlBlock" class={cardStyle}>
-        <i-panel id="pnlCard">
+        <i-panel id="pnlCard" class="container">
           <i-hstack
             id="pnlCardHeader"
             verticalAlignment='center'
